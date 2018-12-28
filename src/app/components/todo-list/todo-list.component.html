@@ -1,1 +1,6 @@
-<app-todo-item></app-todo-item>
+<!-- ngFor sẽ loop qua 1 mảng   -->
+<app-todo-item
+  *ngFor="let todo of (todo$ | async)"
+  [todo]="todo"
+  (changeStatus)="onChangeTodoStatus($event)"
+></app-todo-item>
